@@ -1,0 +1,6 @@
+apiVersion: v2
+name: bjs_redis
+description: A Helm chart to deploy redis
+type: application
+version: 0.1.0
+appVersion: "5.0.4"

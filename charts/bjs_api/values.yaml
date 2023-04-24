@@ -1,0 +1,22 @@
+# Default values for xavki_api.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+api_image: benjamaasoufiene/helm-api:v1.0
+api_port: 8000
+api_resources: {}
+api_ingress:
+  enabled: true
+  url: api.kub
+api_replicas: 2
+#api_env:
+#- name: REDIS_HOST
+#  value: redis-redis.xavki.svc.cluster.local
+#- name: REDIS_PASSWORD
+#  value: mypassword
+api_configfile:
+  redis_host: "redis-redis.tp.svc.cluster.local"
+  redis_password: "mypassword"
+  app_port: 8000
+  app_listen: "0.0.0.0"
+

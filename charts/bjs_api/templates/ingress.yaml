@@ -1,0 +1,21 @@
+{{- if eq .Values.api_ingress.enabled true }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+{{ include "bjs_api.header" . | indent 2}}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: {{ .Values.api_ingress.url }}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: api-{{ .Release.Name }}
+            port:
+              number: {{ .Values.api_port }}
+{{- end }}
+

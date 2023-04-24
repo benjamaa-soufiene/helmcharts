@@ -1,0 +1,22 @@
+{{- if eq .Values.redisinsight_ingress.enabled true }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: redisinsight-{{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: {{ .Values.redisinsight_ingress.url }}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: redisinsight-{{ .Release.Name }}
+            port:
+              number: {{ .Values.redisinsight_port }}
+{{- end }}
+

@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: redisinsight-{{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: redisinsight-{{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: redisinsight-{{ .Release.Name }}
+    spec:
+      containers:
+      - name: redisinsight-{{ .Release.Name }}
+        image: {{ .Values.redisinsight_image }}
+        ports:
+        - containerPort: {{ .Values.redisinsight_port }}
+
