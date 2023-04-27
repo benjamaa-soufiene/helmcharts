@@ -3,6 +3,16 @@ entries:
   bjs_api:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2023-04-27T07:56:53.290014849Z"
+    description: A Helm chart for bjs api
+    digest: 428a31b1dff96723764665f46d9d9f916fd5efa905598f88e716199ec132c462
+    name: bjs_api
+    type: application
+    urls:
+    - https://github.com/benjamaa-soufiene/helmcharts/releases/download/bjs_api-0.1.2/bjs_api-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2023-04-27T07:37:12.74386241Z"
     description: A Helm chart for bjs api
     digest: 68161b1d1274499e2d1d140cd63bb4f791795b16fd8f54d03881cdccb8bf4c8d
@@ -43,4 +53,4 @@ entries:
     urls:
     - releases/bjs_redisinsight-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-27T07:37:13.403009695Z"
+generated: "2023-04-27T07:56:53.290024949Z"
